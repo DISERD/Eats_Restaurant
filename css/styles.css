@@ -14,9 +14,12 @@
     --main-nav-color: #252B42;
     --main-how-color: #252B42;
     --main-how-desc-color: #737373;
+    --main-footer-color: #5C5C5C;
 
     --light-color: white;
     --dark-color: black;
+
+    --main-text-hover-color: #C23C0C;
 }
 
 html {
@@ -31,7 +34,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1370px;
+    max-width: 1520px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -45,6 +48,11 @@ body {
     align-items: center;
     padding-top: 50px;
     padding-bottom: 41px;
+}
+
+.header__logo {
+    width: 150px;
+    height: auto;
 }
 
 .nav__list {
@@ -70,6 +78,8 @@ body {
 /* === Hero Section === */
 
 .hero {
+    width: 100%;
+    height: 720px;
     padding-top: 80px;
     padding-bottom: 162px;
     background-image: url(../img/hero-background.jpg);
@@ -88,6 +98,8 @@ body {
     letter-spacing: 0em;
     text-align: center;
     color: var(--third-text-color);
+
+    padding-bottom: 10px;
 }
 
 .hero__title {
@@ -98,6 +110,8 @@ body {
     letter-spacing: 0em;
     text-align: center;
     color: var(--light-color);
+
+    padding-bottom: 5px;
 }
 
 .hero__desc {
@@ -130,8 +144,7 @@ body {
 }
 
 .btn__delivery:hover {
-    background-color: #e03b00;
-    color: #f7ddd4;
+    background-color: var(--main-text-hover-color);
     transition: background-color 0.3s;
 }
 
@@ -158,7 +171,7 @@ body {
 
 .how {
     padding-top: 56px;
-    padding-bottom: 192px;
+    padding-bottom: 180px;
 }
 
 .how__title {
@@ -171,37 +184,69 @@ body {
     text-align: center;
 }
 
+.how__steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 70px 80px 0 80px;
+}
+
 .how__step {
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
-    gap: 30px;
+    justify-content: space-between;
     flex-wrap: wrap;
+
+    width: 1205px;
+}
+
+.how__step:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.how__img {
+    width: 250px;
+    height: auto;
+}
+
+.how__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 390px;
+    height: 280px;
 }
 
 .how__step-title {
-    font-weight: 700;
-    font-size: 24px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
     line-height: 150%;
-    letter-spacing: 0em;
     color: var(--accent-color);
+    text-transform: uppercase;
+    padding-bottom: 18px;
 }
 
-.how__title {
+.how__step-heading {
+    font-family: var(--second-family);
     font-weight: 700;
-    font-size: 40px;
-    line-height: 142%;
-    letter-spacing: 0.01em;
-    color: var(--main-how-color);
+    font-size: 28px;
+    line-height: 140%;
+    color: var(--main-nav-color);
+    padding-bottom: 18px;
 }
 
 .how__desc {
     font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 158%;
-    letter-spacing: 0.01em;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
     color: var(--main-how-desc-color);
+
+    width: 340px;
+    height: 76px;
 }
 
 
@@ -209,31 +254,106 @@ body {
 /* === Order Section === */
 
 .order {
-    padding: 60px 0;
+    background-image: url(../img/order-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 600px;
+    padding-top: 154px;
+    padding-bottom: 126px;
     text-align: center;
 }
 
 .order__title {
-    font-size: 32px;
-    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 142%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: var(--light-color);
+
+    padding-bottom: 20px;
 }
 
 .order__desc {
-    font-size: 18px;
-    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 158%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: var(--light-color);
+
+    padding-bottom: 110px;
 }
 
 .order__stores {
     display: flex;
     justify-content: center;
+    gap: 16px;
 }
+
+.btn--playstore {
+    border-radius: 10px;
+    padding: 18px 31px;
+    width: auto;
+    height: 64px;
+    background: var(--accent-color);
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 175%;
+    letter-spacing: 0.01em;
+    color: var(--light-color);
+}
+
+.btn--playstore:hover {
+    background-color: var(--main-text-hover-color);
+    transition: background-color 0.3s;
+}
+
+.btn--appstore {
+    border: 1px solid var(--light-color);
+    border-radius: 10px;
+    padding: 16px 45px;
+    width: auto;
+    height: 60px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 175%;
+    letter-spacing: 0.01em;
+    color: var(--light-color);
+}
+
+.btn--appstore:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    transition: background-color 0.3s;
+}
+
 
 /* === Footer === */
 
-.footer {
-    padding: 20px 0;
-    background-color: #f1f1f1;
-    text-align: center;
-    font-size: 14px;
-    color: var(--secondary-text-color);
+.footer > .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 116px;
+    padding-bottom: 60px;
+}
+
+.footer__logo {
+    width: 150px;
+    height: auto;
+}
+
+.footer__copyright {
+    font-family: var(--third-family);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    text-align: right;
+    color: var(--main-footer-color);
 }
